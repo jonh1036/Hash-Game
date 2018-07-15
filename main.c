@@ -6,9 +6,8 @@ char mat[3][3];//Criação da matriz
 int main(void) {
     char tecla;
     
-    
     while(1){
-	
+
     }
     printf("\n\n");	
 	return 0;
