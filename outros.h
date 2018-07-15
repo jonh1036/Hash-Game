@@ -9,6 +9,7 @@ void vitoria();
 void direita();
 void esquerda();
 void baixo();
+void cima();
 
 extern char mat[3][3], tecla;
 extern int round, x, y;
@@ -60,6 +61,12 @@ void baixo(){
 	imprimir();
 }
 
+void cima(){
+	if (y>0)
+		y--;
+	imprimir();
+}
+
 void verifica(){
 	switch(tecla){
 		case 13: escolha();//Cadastrar a escolha
@@ -72,7 +79,7 @@ void verifica(){
 			break;
 		case 115: baixo();//Movimentar para baixo
 			break;
-		case 119: //Movimentar para cima
+		case 119: cima();//Movimentar para cima
 			break;
 	}
 }
