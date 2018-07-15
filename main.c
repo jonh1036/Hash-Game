@@ -10,6 +10,8 @@ int main(void) {
     while(1){
 		tecla = getch();
 		verifica(tecla);
+		system("cls");
+		imprimir();
     }
     printf("\n\n");	
 	return 0;

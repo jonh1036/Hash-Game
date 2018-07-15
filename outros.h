@@ -3,8 +3,10 @@
 void imprimir();
 void inicializa();
 void verifica();
+void escolha();
 
-extern char mat[3][3];
+extern char mat[3][3], tecla;
+extern int round, x, y;
 
 void imprimir(){//Função que imprime a matriz completa
     int i, j;
@@ -34,7 +36,7 @@ void inicializa(){//Função que inicializa a matriz no início do programa
 
 void verifica(){
 	switch(tecla){
-		case 13: //Cadastrar a escolha
+		case 13: escolha();//Cadastrar a escolha
 			break;
 		case 97: //Movimentar para a esquerda
 			break;
@@ -47,4 +49,13 @@ void verifica(){
 		case 119: //Movimentar para cima
 			break;
 	}
+}
+
+void escolha(){
+	if(round%2==0 && tecla == 13)
+		mat[y][x] = 'X';
+	else if(round!=0 && tecla == 13)
+		mat[y][x] = 'O';
+		
+	round++;
 }
