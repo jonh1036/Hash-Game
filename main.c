@@ -10,9 +10,8 @@ int main(void) {
     while(1){
     	printf("\n\nPara escolher, tecle <ENTER>");
 		tecla = getch();
-		verifica(tecla);
 		system("cls");
-		imprimir();
+		verifica(tecla);
 		vitoria();
     }
     printf("\n\n");	

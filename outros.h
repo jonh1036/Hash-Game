@@ -6,6 +6,7 @@ void inicializa();
 void verifica();
 void escolha();
 void vitoria();
+void direita();
 
 extern char mat[3][3], tecla;
 extern int round, x, y;
@@ -14,7 +15,10 @@ void imprimir(){//Função que imprime a matriz completa
     int i, j;
     for(i = 0; i < 3; i++){
         for(j = 0; j < 3; j++){
-            printf(" %c ",mat[i][j]);
+        	if(y == i && x == j && mat[y][j] == ' ')
+        		printf(" * ");
+			else
+            	printf(" %c ",mat[i][j]);
             if(j>=0 && j<=1)
             	printf("|");
         }
@@ -36,13 +40,19 @@ void inicializa(){//Função que inicializa a matriz no início do programa
     mat[0][0] = ' ';
 }
 
+void direita(){
+	if (x<2)
+		x++;
+	imprimir();
+}
+
 void verifica(){
 	switch(tecla){
 		case 13: escolha();//Cadastrar a escolha
 			break;
 		case 97: //Movimentar para a esquerda
 			break;
-		case 100: //Movimentar para a direita
+		case 100: direita();//Movimentar para a direita
 			break;
 		case 113: exit(0);//Encerrar o jogo
 			break;
