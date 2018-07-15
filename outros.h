@@ -7,6 +7,7 @@ void verifica();
 void escolha();
 void vitoria();
 void direita();
+void esquerda();
 
 extern char mat[3][3], tecla;
 extern int round, x, y;
@@ -43,6 +44,12 @@ void inicializa(){//Função que inicializa a matriz no início do programa
 void direita(){
 	if (x<2)
 		x++;
+	imprimir();
+}
+
+void esquerda(){
+	if (x>0)
+		x--;
 	imprimir();
 }
 
