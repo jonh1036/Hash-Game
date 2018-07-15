@@ -3,6 +3,8 @@
 void imprimir();
 void inicializa();
 
+extern char mat[3][3];
+
 void imprimir(){//Função que imprime a matriz completa
     int i, j;
     for(i = 0; i < 3; i++){
