@@ -44,7 +44,7 @@ void verifica(){
 			break;
 		case 100: //Movimentar para a direita
 			break;
-		case 113: //Encerrar o jogo
+		case 113: exit(0);//Encerrar o jogo
 			break;
 		case 115: //Movimentar para baixo
 			break;
