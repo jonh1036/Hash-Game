@@ -8,6 +8,7 @@ void escolha();
 void vitoria();
 void direita();
 void esquerda();
+void baixo();
 
 extern char mat[3][3], tecla;
 extern int round, x, y;
@@ -53,17 +54,23 @@ void esquerda(){
 	imprimir();
 }
 
+void baixo(){
+	if (y<2)
+		y++;
+	imprimir();
+}
+
 void verifica(){
 	switch(tecla){
 		case 13: escolha();//Cadastrar a escolha
 			break;
-		case 97: //Movimentar para a esquerda
+		case 97: esquerda();//Movimentar para a esquerda
 			break;
 		case 100: direita();//Movimentar para a direita
 			break;
 		case 113: exit(0);//Encerrar o jogo
 			break;
-		case 115: //Movimentar para baixo
+		case 115: baixo();//Movimentar para baixo
 			break;
 		case 119: //Movimentar para cima
 			break;
