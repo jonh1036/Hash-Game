@@ -8,6 +8,7 @@ int main(void) {
     
 	inicializa();//Inicialização da Matriz
     while(1){
+    	printf("\n\nPara escolher, tecle <ENTER>");
 		tecla = getch();
 		verifica(tecla);
 		system("cls");
