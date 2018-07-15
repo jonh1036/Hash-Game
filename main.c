@@ -6,6 +6,7 @@ char mat[3][3];//Criação da matriz
 int main(void) {
     char tecla;
     
+	inicializa();//Inicialização da Matriz
     while(1){
 
     }
