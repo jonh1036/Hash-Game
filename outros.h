@@ -2,6 +2,7 @@
 
 void imprimir();
 void inicializa();
+void verifica();
 
 extern char mat[3][3];
 
@@ -29,4 +30,21 @@ void inicializa(){//Função que inicializa a matriz no início do programa
     mat[0][0] = '*';//Origem
     imprimir();
     mat[0][0] = ' ';
+}
+
+void verifica(){
+	switch(tecla){
+		case 13: //Cadastrar a escolha
+			break;
+		case 97: //Movimentar para a esquerda
+			break;
+		case 100: //Movimentar para a direita
+			break;
+		case 113: //Encerrar o jogo
+			break;
+		case 115: //Movimentar para baixo
+			break;
+		case 119: //Movimentar para cima
+			break;
+	}
 }
