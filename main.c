@@ -12,6 +12,7 @@ int main(void) {
 		verifica(tecla);
 		system("cls");
 		imprimir();
+		vitoria();
     }
     printf("\n\n");	
 	return 0;

@@ -1,9 +1,11 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 void imprimir();
 void inicializa();
 void verifica();
 void escolha();
+void vitoria();
 
 extern char mat[3][3], tecla;
 extern int round, x, y;
@@ -58,4 +60,37 @@ void escolha(){
 		mat[y][x] = 'O';
 		
 	round++;
+}
+
+void vitoria(){
+	int i, j, contX = 0, contO = 0;
+	
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			if(mat[i][j] == 'X')
+				contX++;
+			else if(mat[i][j] == 'O')
+				contO++;
+		}
+		if(contX==3){
+			printf("\n\nVITORIA DO X");	
+			exit(0);
+		}
+		else if(contO==3){
+			printf("\n\nVITORIA DO O");	
+			exit(0);
+		}
+		else{
+			contX = 0;
+			contO = 0;
+		}
+	}
+	if((mat[0][0] == 'X' && mat[1][1] == 'X' && mat[2][2] == 'X')||(mat[0][2] == 'X' && mat[1][1] == 'X' && mat[2][0] == 'X' )){
+		printf("\n\nVITORIA DO X");	
+		exit(0);
+	}
+	else if((mat[0][0] == 'O' && mat[1][1] == 'O' && mat[2][2] == 'O')||(mat[0][2] == 'O' && mat[1][1] == 'O' && mat[2][0] == 'O' )){
+		printf("\n\nVITORIA DO O");	
+		exit(0);
+	}
 }
