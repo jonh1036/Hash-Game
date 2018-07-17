@@ -88,12 +88,15 @@ void verifica(){//Função que verifica os casos de teste
 }
 
 void escolha(){//Função que cadastra a escolha do jogador da vez
-	if(round%2==0 && tecla == 13)
+	if(round%2==0 && tecla == 13 && mat[y][x] == ' '){
 		mat[y][x] = 'X';
-	else if(round!=0 && tecla == 13)
-		mat[y][x] = 'O';
+		round++;
+	}
+	else if(round!=0 && tecla == 13 && mat[y][x] == ' '){
+		mat[y][x] = 'O';	
+		round++;
+	}
 	imprimir();
-	round++;
 }
 
 void vitoria(){//Função que verifica se o jogador que escolheu venceu
