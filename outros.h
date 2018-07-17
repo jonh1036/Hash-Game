@@ -12,7 +12,7 @@ void baixo();
 void cima();
 int cont(int contX, int contO);
 
-extern char mat[3][3], tecla;
+extern char mat[3][3], tecla, jogador1[20], jogador2[20];
 extern int round, x, y;
 
 void imprimir(){//Função que imprime a matriz completa
@@ -126,11 +126,11 @@ void vitoria(){//Função que verifica se o jogador que escolheu venceu
 	}			
 	
 	if((mat[0][0] == 'X' && mat[1][1] == 'X' && mat[2][2] == 'X')||(mat[0][2] == 'X' && mat[1][1] == 'X' && mat[2][0] == 'X' )){
-		printf("\n\nVITORIA DO X");	
+		printf("\n\nVITORIA de: %s",jogador1);	
 		exit(0);
 	}
 	else if((mat[0][0] == 'O' && mat[1][1] == 'O' && mat[2][2] == 'O')||(mat[0][2] == 'O' && mat[1][1] == 'O' && mat[2][0] == 'O' )){
-		printf("\n\nVITORIA DO O");	
+		printf("\n\nVITORIA de: %s",jogador2);
 		exit(0);
 	}
 	
@@ -150,11 +150,11 @@ void vitoria(){//Função que verifica se o jogador que escolheu venceu
 
 int cont(int contX, int contO){//Função que imprime a mensagem de vitória do jogador da vez
 	if(contX==3){
-		printf("\n\nVITORIA DO X");	
+		printf("\n\nVITORIA de: %s",jogador1);	
 		exit(0);
 	}
 	else if(contO==3){
-		printf("\n\nVITORIA DO O");	
+		printf("\n\nVITORIA de: %s",jogador2);
 		exit(0);
 	}
 	else{
