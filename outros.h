@@ -97,7 +97,7 @@ void escolha(){//Função que cadastra a escolha do jogador da vez
 }
 
 void vitoria(){//Função que verifica se o jogador que escolheu venceu
-	int i, j, contX = 0, contO = 0;
+	int i, j, contX = 0, contO = 0, validacao = 1;
 	
 	for(i=0;i<3;i++){		//Verificação por linhas
 		for(j=0;j<3;j++){
@@ -128,6 +128,19 @@ void vitoria(){//Função que verifica se o jogador que escolheu venceu
 	}
 	else if((mat[0][0] == 'O' && mat[1][1] == 'O' && mat[2][2] == 'O')||(mat[0][2] == 'O' && mat[1][1] == 'O' && mat[2][0] == 'O' )){
 		printf("\n\nVITORIA DO O");	
+		exit(0);
+	}
+	
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++){
+			if(mat[i][j] == ' '){
+				validacao = 0;
+				break;	
+			}
+		}
+	}
+	if(validacao == 1){
+		printf("\nEMPATE!");
 		exit(0);
 	}
 }
